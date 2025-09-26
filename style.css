@@ -1,0 +1,244 @@
+:root {
+  --bg: linear-gradient(135deg, #f9f9f9, #e3e3e3);
+  --text: #222;
+  --card: rgba(0, 0, 0, 0.05);
+  --nav: rgba(255, 255, 255, 0.8);
+  --accent: #007bff;
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  --text: #f0f0f0;
+  --card: rgba(255, 255, 255, 0.05);
+  --nav: rgba(0, 0, 0, 0.6);
+  --accent: #00e0ff;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s, color 0.4s;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: var(--nav);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background 0.4s;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-links li:hover {
+  color: var(--accent);
+}
+
+.menu-right {
+  display: none;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-btn {
+  cursor: pointer;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: var(--text);
+  transition: color 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--nav);
+  backdrop-filter: blur(8px);
+}
+
+.mobile-menu li {
+  list-style: none;
+  padding: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.mobile-menu li:hover {
+  color: var(--accent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+}
+
+.post {
+  background: var(--card);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.post:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.post img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.post h2 {
+  margin: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.detail {
+  display: none;
+  padding: 25px;
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.5s ease;
+}
+
+.detail img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: #000;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile {
+  text-align: center;
+  padding: 30px;
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.5s ease;
+  margin-bottom: 25px;
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  object-fit: cover;
+}
+
+.profile h2 {
+  margin: 15px 0 5px;
+  font-size: 22px;
+}
+
+.profile p {
+  margin: 6px 0;
+}
+
+.blog-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .menu-right {
+    display: flex;
+  }
+  .mobile-menu.show {
+    display: flex;
+  }
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding: 15px 20px;
+  text-align: center;
+  border-top: 2px solid var(--accent);
+  font-size: 14px;
+  color: var(--text);
+  background: var(--card);
+  border-radius: 0 0 15px 15px;
+}
+
+footer .footer-content {
+  max-width: 1200px;
+  margin: auto;
+}

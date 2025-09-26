@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Pribadi Tugas Basis Data</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+  <div class="navbar">
+    <h1>FINAURI.ID</h1>
+    <ul class="nav-links">
+      <li onclick="showSection('home')">Home</li>
+      <li onclick="showSection('profilePosts')">Profil</li>
+      <li><a href="http://www.ubpkarawang.ac.id" target="_blank" style="text-decoration:none; color:inherit;">UBP Karawang</a></li>
+      <li><button class="toggle-btn" id="toggleMode">☀️</button></li>
+    </ul>
+
+    <div class="menu-right">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <button class="toggle-btn" id="toggleModeMobile">☀️</button>
+    </div>
+  </div>
+
+  <ul class="mobile-menu" id="mobileMenu">
+    <li onclick="showSection('home');toggleMenu()">Home</li>
+    <li onclick="showSection('profilePosts');toggleMenu()">Profil</li>
+    <li><a href="http://www.ubpkarawang.ac.id" target="_blank" style="text-decoration:none; color:inherit;">UBP Karawang</a></li>
+  </ul>
+
+  <div class="container">
+    <div id="home" class="posts"></div>
+
+    <div id="profilePosts" style="display:none;">
+      <div class="profile">
+        <img src="img/fp.png" alt="Foto Profil">
+        <h2>Andika Khoir Rijal</h2>
+        <p><b>NIM:</b> 24416255201047</p>
+        <p><b>Kelas:</b> IF24B</p>
+        <p><b>Email:</b> if24.andikarijal@mhs.ubpkarawang.ac.id</p>
+        <p><b>No. HP:</b> +62 895-1335-5063</p>
+      </div>
+      <div class="blog-title">Blog Post</div>
+      <div class="posts" id="profilePostsList"></div>
+    </div>
+
+    <div id="detail" class="detail"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      &copy; 2025 FINAURI.ID. Semua hak cipta dilindungi.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
