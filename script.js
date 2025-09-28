@@ -1,6 +1,6 @@
 const postsData = [
   { id: 1, title: "Post 1: Harapan di MK Basis Data", img: "img/harapanMK.png" },
-  { id: 2, title: "Post 2: Apa itu Basis Data", img: "img/BASISDATA.PNG" },
+  { id: 2, title: "Post 2: Basis Data", img: "img/BASISDATA.PNG" },
   { id: 3, title: "Post 3: Conceptual Database", img: "img/KONSEPTIALDB.png" },
   { id: 4, title: "Post 4: Physical Model", img: "img/pysicalmodel.png" }
 ];
@@ -145,3 +145,4 @@ document.getElementById("toggleModeMobile").addEventListener("click", function()
 
 renderPosts("home");
 renderPosts("profilePostsList");
+
